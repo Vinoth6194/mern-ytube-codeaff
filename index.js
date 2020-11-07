@@ -14,7 +14,10 @@ require("./db");
 //   console.log("Second middleware");
 //   next();
 // });
-
+//*Controller
+var postMessageRoutes = require("./controllers/postMessageController");
+app.use(bodyParser.json());
+app.use("/postmessages", postMessageRoutes);
 //*Server port
 app.listen(5000, () => {
   console.log("VinServer running at 5000");
