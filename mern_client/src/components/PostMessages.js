@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions/postMessage";
 
 const PostMessages = (props) => {
+  useEffect(() => {
+    props.fetchAllPostMessages();
+  }, []);
   return <div>FrompostMessages</div>;
 };
 const mapStateToProps = (state) => ({

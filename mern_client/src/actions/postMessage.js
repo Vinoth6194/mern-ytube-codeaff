@@ -1,4 +1,4 @@
-import api from "api.js";
+import api from "./api.js";
 export const ACTION_TYPES = {
   CREATE: "CREATE",
   UPDATE: "UPDATE",
@@ -12,6 +12,7 @@ export const fetchAll = () => (dispatch) => {
     .postMessage()
     .fetchAll()
     .then((res) => {
+      console.log(res);
       dispatch({
         type: ACTION_TYPES.FETCH_ALL,
         payload: res.data,
